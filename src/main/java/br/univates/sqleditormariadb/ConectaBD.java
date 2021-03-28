@@ -43,11 +43,11 @@ public class ConectaBD {
                 Statement st = con.createStatement();
                 resultadoQ = st.executeQuery(query);
 
-                tabela.setModel(new TableModel().buildTableModel(resultadoQ));
+                new TableModel().resultSetToTableModel(resultadoQ, tabela);
                 con.close();
 
             } catch (SQLException s) {
-                JOptionPane.showMessageDialog(null,"SQL statement is not executed!");
+                JOptionPane.showMessageDialog(null, "SQL statement is not executed!");
             }
         } catch (Exception e) {
             e.printStackTrace();
