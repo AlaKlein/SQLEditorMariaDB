@@ -16,9 +16,9 @@ import javax.swing.table.DefaultTableModel;
  * @author ala.klein
  */
 public class TableModel {
+
     public static DefaultTableModel buildTableModel(ResultSet rs)
             throws SQLException {
-
         ResultSetMetaData metaData = rs.getMetaData();
 
         // names of columns
