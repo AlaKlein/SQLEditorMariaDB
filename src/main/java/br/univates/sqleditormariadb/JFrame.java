@@ -5,10 +5,7 @@
  */
 package br.univates.sqleditormariadb;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.UIManager;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -21,6 +18,7 @@ public class JFrame extends javax.swing.JFrame {
      */
     public JFrame() {
         initComponents();
+        this.setTitle("SQL Editor for MariaDB");
     }
 
     /**
@@ -54,13 +52,13 @@ public class JFrame extends javax.swing.JFrame {
 
         table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         jScrollPane3.setViewportView(table);
@@ -106,23 +104,17 @@ public class JFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQueryActionPerformed
-        try {
-            new ConectaBD().consulta(QueryTxtArea.getText(), table);
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(JFrame.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        new ConectaBD().consulta(QueryTxtArea.getText(), table);
     }//GEN-LAST:event_btnQueryActionPerformed
 
     public static void main(String args[]) {
-
         try {
             UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         } catch (Exception e) {
             e.printStackTrace();
         }
         JFrame tela = new JFrame();
-        tela.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+        tela.setExtendedState(JFrame.MAXIMIZED_BOTH);
         tela.setVisible(true);
     }
 

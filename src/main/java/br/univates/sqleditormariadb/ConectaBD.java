@@ -8,13 +8,10 @@ package br.univates.sqleditormariadb;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -24,7 +21,7 @@ public class ConectaBD {
 
     ResultSet resultadoQ = null;
 
-    public void consulta(String query, JTable tabela) throws ClassNotFoundException {
+    public void consulta(String query, JTable tabela) {
         try {
             ConectaSSH.go();
         } catch (Exception ex) {
