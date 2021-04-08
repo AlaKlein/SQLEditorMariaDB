@@ -21,7 +21,10 @@ public class ConectaBD {
 
     ResultSet resultadoQ = null;
 
-    public void consulta(String query, JTable tabela) {
+    public long consulta(String query, JTable tabela) {
+
+        long start = System.nanoTime();
+
         try {
             ConectaSSH.go();
         } catch (Exception ex) {
@@ -49,5 +52,13 @@ public class ConectaBD {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        long end = System.nanoTime();
+
+        long time = ( end - start )/1000000;
+
+        System.out.print( "milliseconds: " + time );
+
+        return time;
     }
 }
