@@ -25,11 +25,6 @@ public class ConectaBD {
 
         long start = System.nanoTime();
 
-        try {
-            ConectaSSH.go();
-        } catch (Exception ex) {
-            ex.printStackTrace();
-        }
         Connection con = null;
         String driver = "org.mariadb.jdbc.Driver";
         String url = "jdbc:mariadb://" + ConectaSSH.rhost + ":" + ConectaSSH.lport + "/";
@@ -55,9 +50,7 @@ public class ConectaBD {
 
         long end = System.nanoTime();
 
-        long time = ( end - start )/1000000;
-
-        System.out.print( "milliseconds: " + time );
+        long time = (end - start) / 1000000;
 
         return time;
     }

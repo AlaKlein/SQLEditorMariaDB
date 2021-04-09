@@ -20,6 +20,11 @@ public class JFrame extends javax.swing.JFrame {
         initComponents();
         jTextField1.setEditable(false);
         this.setTitle("SQL Editor for MariaDB");
+        try {
+            ConectaSSH.go();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
     }
 
     /**
