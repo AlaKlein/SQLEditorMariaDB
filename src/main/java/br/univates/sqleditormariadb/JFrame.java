@@ -121,8 +121,8 @@ public class JFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnQueryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQueryActionPerformed
-       long a = new ConectaBD().consulta(QueryTxtArea.getText(), table);
-       jTextField1.setText(Long.toString(a) + "ms, " + table.getModel().getRowCount() + " lines fetched");
+        long a = new ConectaBD().consulta(QueryTxtArea.getText(), table);
+        jTextField1.setText(Long.toString(a) + "ms, " + table.getModel().getRowCount() + " lines fetched");
     }//GEN-LAST:event_btnQueryActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

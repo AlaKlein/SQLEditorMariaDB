@@ -22,7 +22,6 @@ public class ConectaBD {
     ResultSet resultadoQ = null;
 
     public long consulta(String query, JTable tabela) {
-
         long start = System.nanoTime();
 
         Connection con = null;

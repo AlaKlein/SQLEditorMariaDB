@@ -33,6 +33,7 @@ public class ConectaSSH {
             session.setConfig("StrictHostKeyChecking", "no");
             System.out.println("Establishing Connection...");
             session.connect();
+            int assinged_port = session.setPortForwardingL(lport, rhost, rport);
         } catch (Exception e) {
             System.err.print(e);
         }
