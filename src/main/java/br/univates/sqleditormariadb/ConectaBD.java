@@ -27,7 +27,8 @@ public class ConectaBD {
         Connection con = null;
         String driver = "org.mariadb.jdbc.Driver";
         String url = "jdbc:mariadb://" + ConectaSSH.rhost + ":" + ConectaSSH.lport + "/";
-        String db = "classicmodels";
+        //String db = "classicmodels";
+        String db = "parlamentares";
         String dbUser = "admindb";
         String dbPasswd = "2021A";
         try {
